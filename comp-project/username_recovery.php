@@ -1,11 +1,11 @@
-<!-- recovery.php -->
+<!-- username_recovery.php -->
 <?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Recovery</title>
+    <title>Username Recovery</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -68,15 +68,11 @@
 
 <div class="container">
     <div class="header">
-        <h2>Password Recovery</h2>
+        <h2>Username Recovery</h2>
     </div>
 
-    <form method="post" action="recovery.php">
+    <form method="post" action="username_recovery.php">
         <?php include('errors.php'); ?>
-        <div class="input-group">
-            <label>Username</label>
-            <input type="text" name="recovery_username">
-        </div>
         <div class="input-group">
             <label>Email</label>
             <input type="email" name="recovery_email">
@@ -99,30 +95,23 @@
             <select name="security_question_2">
                 <option value="What is your favorite movie?">What is your favorite movie?</option>
                 <option value="In which year did you graduate from high school?">In which year did you graduate from high school?</option>
-                <option value="What is the name of your childhood best friend?">What is the name of your childhood best friend?</option>
+                <option value="What is the name of your childhood best friend?">What is your name of your childhood best friend?</option>
                 <option value="What is the first name of your favorite teacher?">What is the first name of your favorite teacher?</option>
                 <option value="What is the color of your first car?">What is the color of your first car?</option>
             </select>
             <input type="text" name="security_answer_2" placeholder="Your answer">
         </div>
         <div class="input-group">
-            <button type="submit" class="btn" name="recover_password">Recover Password</button>
+            <button type="submit" class="btn" name="recover_username">Recover Username</button>
         </div>
     </form>
 
-    <p>Remember your password? <a href="login.php">Login here</a></p>
+    <p>Remember your username? <a href="login.php">Login here</a></p>
     
     <!-- Link to switch between password and username recovery -->
-    <p>Forgot your username? <a class="switch-link" href="username_recovery.php">Recover username</a></p>
+    <p>Forgot your password? <a class="switch-link" href="recovery.php">Recover password</a></p>
 
 </div>
-
-<script>
-    // JavaScript function to switch between password and username recovery
-    function switchRecoveryType() {
-        window.location.href = "username_recovery.php";
-    }
-</script>
 
 </body>
 </html>
